@@ -1,161 +1,230 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <main>
-    <section>
-        <h2>Contact Us</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
 
-        <form>
-            <label for="name">Ashley G & Isabella D:</label><br>
-            <input type="text" id="name" name="name" required><br><br>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+            margin: 0;
+            line-height: 1.6;
+        }
 
-            <label for="email">agendaflow@nycgmail.com:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #5a4a39, #ffffff);
+            color: rgb(228, 203, 175);
+            text-align: center;
+            padding: 40px 20px;
+        }
 
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="5"></textarea><br><br>
+        /* NAVBAR */
+        nav {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
 
-            <button type="submit">Submit</button>
-        </form>
-    </section>
-</main>
-    </head>
-    <body>
-    <style>body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f6f8;
-    color: #333;
-    line-height: 1.6;
-}
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
 
-/* ========== HEADER ========== */
-header {
-    background: linear-gradient(135deg, #5a4a39, #ffffff);
-    color: rgb(228, 203, 175);
-    text-align: center;
-    padding: 40px 20px;
-}
+        nav a.active {
+            color: #886956;
+            border-bottom: 2px solid #886956;
+        }
 
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
+        /* MAIN */
+        main {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+        }
 
-header p {
-    font-size: 1.2rem;
-    opacity: 0.9;
-}
+        /* CONTACT SECTION */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
 
-/* ========== NAVIGATION ========== */
-nav {
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 15px;
-    border-bottom: 1px solid #ddd;
-}
+        section {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
 
-nav a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
-    transition: 0.3s;
-}
+        h2 {
+            color: #876655;
+            margin-bottom: 20px;
+        }
 
-nav a:hover {
-    color: #775a44;
-}
+        /* FORM */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
 
-/* ========== MAIN ========== */
-main {
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 0 20px;
-}
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
 
-/* ========== SECTIONS ========== */
-section {
-    background: white;
-    padding: 25px;
-    margin-bottom: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
+        input,
+        textarea {
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
 
-section h2 {
-    margin-bottom: 15px;
-    color: #876655;
-}
+        textarea {
+            resize: vertical;
+        }
 
-section h3 {
-    margin-top: 15px;
-    color: #68543c;
-}
+        button {
+            margin-top: 20px;
+            background-color: #886956;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
 
-/* ========== IMAGES ========== */
-img {
-    width: 100%;
-    border-radius: 10px;
-    margin-top: 15px;
-}
+        button:hover {
+            background-color: #675543;
+        }
 
-/* ========== FORM (CONTACT PAGE) ========== */
-form {
-    display: flex;
-    flex-direction: column;
-}
+        /* CONTACT INFO */
+        .contact-info p {
+            margin-bottom: 15px;
+        }
 
-input, textarea {
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-}
+        /* MAP */
+        .map {
+            margin-top: 30px;
+        }
 
-input:focus, textarea:focus {
-    outline: none;
-    border-color: #2a5298;
-}
+        iframe {
+            width: 100%;
+            height: 350px;
+            border: 0;
+            border-radius: 10px;
+        }
 
-/* BUTTON */
-button {
-    background-color: #886956;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 6px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: 0.3s;
-}
+        /* FOOTER */
+        footer {
+            background-color: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
 
-button:hover {
-    background-color: #675543;
-}
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
 
-/* ========== FOOTER ========== */
-footer {
-    background-color: #1e3c72;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-}
+<body>
 
-footer p {
-    margin: 5px 0;
-}</style>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
-        <script src="" async defer></script>
-    </body>
+    <!-- HEADER -->
+    <header>
+        <h1>Contact Us</h1>
+        <p>We would love to hear from you!</p>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <div class="contact-container">
+
+            <!-- CONTACT FORM -->
+            <section>
+                <h2>GContact us</h2>
+
+                <form>
+
+                    <label for="name">Isabella & Ashley</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        required
+                    >
+
+                    <label for="email">Agendaflow@nycgmail.com</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        required
+                    >
+
+                    <label for="message">Message</label>
+                    <textarea 
+                        id="message" 
+                        name="message" 
+                        rows="6" 
+                        required
+                    ></textarea>
+
+                    <button type="submit">Send</button>
+
+                </form>
+            </section>
+
+            <!-- CONTACT INFO -->
+            <section class="contact-info">
+                <h2>Contact Information</h2>
+
+                <p><strong>Business Name:</strong> AgendaFlow</p>
+
+                <p><strong>Email:</strong> agendaflow@nycgmail.com</p>
+
+                <p><strong>Phone:</strong> (555) 123-4567</p>
+
+                <p><strong>Address:</strong> 123 Business Ave, New York, NY</p>
+
+                <p>
+                    <strong>Social Media:</strong><br>
+                    Instagram: @AgendaFlow<br>
+                    TikTok: @AgendaFlow
+                </p>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 AgendaFlow. All rights reserved.</p>
+    </footer>
+
+</body>
 </html>
